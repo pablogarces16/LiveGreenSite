@@ -231,7 +231,7 @@ html {
 .footerlogotxt {
   transition: 0.3s;
   color: white;
-  font-size: 26px;
+  font-size: 30px;
   font-family: "Oduda", sans-serif;
   margin-top: 14px;
 }
@@ -985,6 +985,7 @@ justify-content: center;
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  margin-bottom: -2px;
 }
 
 .footerbody {
