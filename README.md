@@ -1,2 +1,2 @@
 # LiveGreenSite
-The official marketing website for the LiveGreen site
+The official marketing website for the LiveGreen app
