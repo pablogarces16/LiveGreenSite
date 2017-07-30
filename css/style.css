@@ -146,6 +146,12 @@ html {
 
 .map {
   width: 100%;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .linkedtext:link {
@@ -217,26 +223,26 @@ html {
 @media(min-width:1000px) {
 
   #mainheader {
-    margin-left: 100px;
-    margin-right: 100px;
+    /*margin-left: 100px;
+    margin-right: 100px;*/
   }
 
   #headercaption {
-    margin-left: 160px;
-    margin-right: 160px;
+    /*margin-left: 160px;
+    margin-right: 160px;*/
   }
 }
 
 @media(max-width:1000px) {
 
   #mainheader {
-    margin-left: 25px;
-    margin-right: 25px;
+    /*margin-left: 25px;
+    margin-right: 25px;*/
   }
 
   #headercaption {
-    margin-left: 20px;
-    margin-right: 20px;
+    /*margin-left: 20px;
+    margin-right: 20px;*/
   }
 }
 
@@ -262,7 +268,6 @@ html {
 
 
   #mainheader {
-    margin-top: -25px;
     font-size: 26px;
     line-height: 33px;
   }
@@ -358,7 +363,6 @@ html {
     }
 
     #mainheader {
-      margin-top: 10px;
       font-size: 42px;
       line-height: 50px;
     }
@@ -471,13 +475,14 @@ html {
 }
 
 .intro-section {
-    height: 90vh;
-    min-height: 600px;
+    max-height: 90vh;
     padding-top: 150px;
-    text-align: center;
-    background: url("../img/green.jpg") no-repeat center;
+    padding-bottom: 150px;
+    text-align: left;
+    /*background: url("../img/green.jpg") no-repeat center;
     background-size: cover;
-    background-color: none;
+    background-color: none;*/
+    background: #68bd45;
 }
 
 .overlay {
@@ -495,7 +500,6 @@ html {
 }
 
 #mainheader {
-  margin-top: 4%;
   color: white;
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
@@ -638,6 +642,12 @@ html {
 
     }
 
+    .greenpic {
+      padding: 0;
+      width: 100%;
+
+    }
+
     .chalcon {
       display: table;
       width: 100%;
@@ -776,6 +786,17 @@ justify-content: center;
 .challengespic {
   width: 100%;
   padding: 0px;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.greenpic {
+  width: 100%;
+  margin: 0px;
   user-drag: none;
   user-select: none;
   -moz-user-select: none;
@@ -1194,11 +1215,33 @@ justify-content: center;
   border-color: #cde7cd;
 }
 
-.tressplantedtitle {
-
+.treesplantedtitle {
+  margin: 30px;
 }
 
 .treetitle {
   text-align: left;
 
+}
+
+#headcon {
+
+}
+
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
 }
