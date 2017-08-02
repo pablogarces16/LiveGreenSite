@@ -1255,7 +1255,7 @@ justify-content: center;
 
 }
 
-.linkout a {
+.linkout .footlink {
   font-family: 'Montserrat', serif;
   color: #2c7046;
   font-size: 16px;
@@ -1263,8 +1263,23 @@ justify-content: center;
   transition: 0.3s;
 }
 
-.linkout a:hover,
-.linkout a:focus {
+.linkout .footlink:hover,
+.linkout .footlink:focus {
+  color: #43ac5f;
+  text-decoration: none;
+
+}
+
+.linkout .footlinkmail {
+  font-family: 'Montserrat', serif;
+  color: #43ac5f;
+  font-size: 16px;
+  font-weight: lighter;
+  transition: 0.3s;
+}
+
+.linkout .footlinkmail:hover,
+.linkout .footlinkmail:focus {
   color: #43ac5f;
   text-decoration: none;
 
@@ -1305,6 +1320,10 @@ justify-content: center;
     padding: 10px;
   }
 
+  .copyrightblock {
+    margin-top: 6px;
+  }
+
 }
 
 @media screen and (min-width: 780px) {
@@ -1318,6 +1337,19 @@ justify-content: center;
 
   .logobox {
     margin-bottom: 20px;
+  }
+
+  .copyrightblock {
+    margin-top: 20px;
+  }
+
+}
+
+@media screen and (min-width: 1000px) {
+
+  .friendspic {
+    padding: 40px;
+    margin-top: -40px;
   }
 
 }
