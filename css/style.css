@@ -117,7 +117,7 @@ html {
   display: inline-block;
   position: relative;
   padding: 0 .2em;
-  padding-left:  0;
+  padding-left: 4px;
   transition: all 250ms;
   z-index: 1000;
 }
@@ -129,7 +129,7 @@ html {
   display: inline-block;
   position: relative;
   padding: 0 .2em;
-  padding-left: 0;
+  padding-left: 4px;
   transition: all 250ms;
   z-index: 1000;
 }
@@ -777,8 +777,8 @@ justify-content: center;
 .textcolumn {
   height: 100%;
   display: flex;
-align-items: center;
-justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .challenges-section .container .row .col-md-6 {
