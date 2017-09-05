@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+
+<!-- === Copyright LiveGreen 2017 === -->
+
+<head>
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>LiveGreen - Stats</title>
+	<meta name="description" content="Track and Improve your Carbon Emissions">
+	<meta name="author" content="">
+
+  <!-- Google G Suit account linking -->
+  <meta name="google-site-verification" content="Pm-QmUNd8EoKEV-HcTz0tieVWKRxVUxgJrn0htn5C1E" />
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="css/style.css">
+
+   <!-- Latest compiled and minified CSS -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- FONTS
+    ================================================== -->
+   <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins:600|Roboto" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Esteban" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <!-- Favicon
+    ================================================== -->
+   <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+
+<body id="signin-body">
+
+  <div class="page-message">
+    <h1 class="big-txt">Enter Credentials</h1>
+  </div>
+
+  <div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+    <form class="login-form">
+      <input id="email" type="text" placeholder="Email"/>
+      <input id="password" type="password" placeholder="Password"/>
+      <button onclick="checkLogin()">login</button>
+      <p class="message">Incorrect Email or Password</p>
+    </form>
+  </div>
+</div>
+
+</body>
+
+<!-- Google Firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBvvz_7-_F4X_5949OqbijpZDAfVqyhbmQ",
+    authDomain: "livegreen-3ebdc.firebaseapp.com",
+    databaseURL: "https://livegreen-3ebdc.firebaseio.com",
+    projectId: "livegreen-3ebdc",
+    storageBucket: "livegreen-3ebdc.appspot.com",
+    messagingSenderId: "491387418002"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.7.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.6/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.6/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.6/firebase.js"></script>
+<script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+
+<script>
+  var ref = new Firebase("https://livegreen-3ebdc.firebaseio.com");
+//var ref = firebase.databaseURL
+
+  function checkLogin() {
+    var email = $("#email").val();
+    var password = $("#password").val();
+
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+      // Handle Errors here.
+      $("#message").css("display", "block");
+      $("#message").text("Incorrect Email or Password.");
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log("This");
+      // ...
+      console.log(errorMessage + errorCode);
+    });
+
+    window.open('www.google.com');
+    console.log("Cluuop");
+  }
+
+
+</script>
+
+</html>

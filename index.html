@@ -210,7 +210,7 @@
               <div class="col-md-6">
                 <div class="treesplantedtitle">
                   <h2 class="sectiontitle treetitle">The More You Use LiveGreen, the More Trees We Plant for You</h2>
-                  <p class="sectiontxt">LiveGreen partners with the <a class="linkedtextdark" href="http://www.edenprojects.org/our_work" target="_blank"> Eden Reforestation Project </a> to plant trees in Madagascar, Nepal, and Haiti. The local community is hired to plant and care for the trees. In addition to offsetting your carbon emissions, trees help by giving them a decent income to support their families. The survival rate for trees planted is over 80%, translating to millions of tons of carbon saved per year.</p>
+                  <p class="sectiontxt">LiveGreen partners with <a class="linkedtextdark" href="http://www.edenprojects.org/our_work" target="_blank"> Eden Reforestation Projects </a> to plant trees in Madagascar, Nepal, and Haiti. The local community is hired to plant and care for the trees. In addition to offsetting your carbon emissions, trees help by giving them a decent income to support their families. The survival rate for trees planted is over 80%, translating to millions of tons of carbon saved per year.</p>
                 </div>
               </div>
 
@@ -300,6 +300,9 @@
             </div>
         </div>
     </section>
+
+    <div id="errorBar">Please enter a valid email.</div>
+    <div id="successBar">Thanks for your request! We will reply within 24 hours.</div>
 
     <section id="footer" class="footer-section">
       <img class="footerimg" src="img/newwind.png"></img>
@@ -400,12 +403,20 @@
         document.getElementById("myEmail").placeholder = "Submitted!";
         document.getElementById("myEmail").disabled = true;
 
+        var x = document.getElementById("successBar")
+				//x.className = "show";
+				setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+
       } else {
 
         $(".result").text("Please enter a valid email.");
         $(".result").css("color", "#aa5861");
         console.log('Put a valid email.');
         document.getElementById("myEmail").value = "";
+
+        var x = document.getElementById("errorBar")
+        //x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 
       }
 

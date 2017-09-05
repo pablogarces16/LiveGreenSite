@@ -1225,6 +1225,73 @@ justify-content: center;
 
 }
 
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#successBar {
+	border-radius: 10px;
+  display: none; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  background-color: rgba(103, 188, 69, 0.6); /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 10000; /* Add a z-index if needed */
+  left: 30px; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+	font-family: "Montserrat";
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#successBar.show {
+  display: block; /* Show the snackbar */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#errorBar {
+	border-radius: 10px;
+  display: none; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  background-color: rgba(237, 46, 46, 0.6); /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 10000; /* Add a z-index if needed */
+  left: 30px; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+	font-family: "Montserrat";
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#errorBar.show {
+  display: block; /* Show the snackbar */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
 #headcon {
 
 }
@@ -1293,6 +1360,148 @@ justify-content: center;
   color: #43ac5f;
 }
 
+#stats-page {
+  background: #0B1221;
+  height: 100%;
+  width: 100%;
+
+}
+
+#dl-section {
+  background: #172137;
+  border-radius: 10px;
+}
+
+#dl-co2-section {
+  background: #172137;
+  border-radius: 10px;
+}
+
+
+.fa-caret-up {
+  padding-right: 10px;
+
+}
+
+.fa-caret-down {
+  padding-right: 10px;
+
+}
+
+#challenges-section-data {
+  background: #172137;
+  border-radius: 10px;
+}
+
+#challenges-section-data-completed {
+  background: #172137;
+  border-radius: 10px;
+}
+
+#trees-section-data {
+  background: #172137;
+  border-radius: 10px;
+}
+
+#percent-change-users {
+  font-size: 3.4em;
+  color: #14B7A6;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+#percent-change-carbon {
+  font-size: 3.4em;
+  color: #C76972;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.big-txt {
+  text-align: center;
+  width: 100%;
+  font-family: 'Montserrat', serif;
+  padding-top: 20px;
+  color: white;
+}
+
+#users-num {
+  text-align: center;
+  width: 100%;
+  font-size: 10em;
+  color: white;
+  margin-top: -10px;
+  font-family: 'Source Code Pro', monospace;
+  padding-bottom: 20px;
+}
+
+#carbon-num {
+  text-align: center;
+  width: 100%;
+  font-size: 10em;
+  color: white;
+  margin-top: -10px;
+  font-family: 'Source Code Pro', monospace;
+  padding-bottom: 20px;
+}
+
+#goal-num {
+  text-align: center;
+  width: 100%;
+  font-size: 10em;
+  color: white;
+  margin-top: -10px;
+  font-family: 'Source Code Pro', monospace;
+  padding-bottom: 20px;
+}
+
+.subtitle-txt {
+  width: 100%;
+  text-align: center;
+  color: #14B7A6;
+  font-family: 'Montserrat', serif;
+  font-size: 1.5em;
+}
+
+#trees-num {
+  text-align: center;
+  width: 100%;
+  font-size: 10em;
+  color: white;
+  margin-top: -10px;
+  font-family: 'Source Code Pro', monospace;
+  padding-bottom: 20px;
+}
+
+#challenges-num {
+  text-align: center;
+  width: 100%;
+  font-size: 10em;
+  color: white;
+  margin-top: -10px;
+  font-family: 'Source Code Pro', monospace;
+  padding-bottom: 20px;
+}
+
+#goal-section-data {
+  background: #172137;
+  border-radius: 10px;
+}
+
+#done-challenges-num {
+  text-align: center;
+  width: 100%;
+  font-size: 10em;
+  color: white;
+  margin-top: -10px;
+  font-family: 'Source Code Pro', monospace;
+  padding-bottom: 20px;
+}
+
 .footerdescrip {
   font-size: 14px;
   color: white;
@@ -1312,6 +1521,10 @@ justify-content: center;
   margin-top :
 }
 
+.bottom {
+  margin-bottom: 30px;
+}
+
 @media screen and (max-width: 780px) {
 
   .linkout {
@@ -1323,16 +1536,76 @@ justify-content: center;
   .copyrightblock {
     margin-top: 6px;
   }
+  .big-txt {
+    font-size: 3em;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .left-dl {
+    margin: 0;
+  }
+
+  .right-dl {
+    margin: 0;
+  }
+
+  #stats-page .oner {
+    margin: 5px;
+  }
+
+  #stats-page .twor {
+    margin: 0px;
+    margin-top: -10px;
+  }
+
+  #stats-page .threer {
+    margin: 0px;
+    margin-top: -10px;
+  }
 
 }
 
 @media screen and (min-width: 780px) {
+
+  #stats-page {
+    overflow-x: hidden;
+  }
 
   .linkcontainer {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .left-dl {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 0px;
+
+  }
+
+  .left-nudge {
+    margin-left: 30px;
+  }
+
+  .right-nudge {
+    margin-right: 30px !important;
+  }
+
+  .right-dl {
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-left: 0px;
+  }
+
+  .big-txt {
+    font-size: 4em;
+  }
+
+  #stats-page {
+
   }
 
   .logobox {

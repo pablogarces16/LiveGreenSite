@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+
+<!-- === Copyright LiveGreen 2017 === -->
+
+<head>
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>LiveGreen - Stats</title>
+	<meta name="description" content="Track and Improve your Carbon Emissions">
+	<meta name="author" content="">
+
+  <!-- Google G Suit account linking -->
+  <meta name="google-site-verification" content="Pm-QmUNd8EoKEV-HcTz0tieVWKRxVUxgJrn0htn5C1E" />
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="css/style.css">
+
+   <!-- Latest compiled and minified CSS -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- FONTS
+    ================================================== -->
+   <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins:600|Roboto" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Esteban" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <!-- Favicon
+    ================================================== -->
+   <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+
+
+<body id="stats-page">
+
+  <div class="row oner">
+
+<div class="col-md-6">
+  <div id="dl-section" class="left-dl">
+    <h1 class="big-txt">Downloads</h1>
+    <h1 id="users-num" class="updatingTxt">--</h1>
+    <!-- <h1 id="percent-change-users"><i class="fa fa-caret-up" aria-hidden="true"></i>5.67%</h1> -->
+  </div>
+</div>
+
+<div class="col-md-6">
+<div id="trees-section-data" class="right-dl">
+  <h1 class="big-txt">Trees Planted</h1>
+  <h1 id="trees-num" class="updatingTxt">--</h1>
+  <!-- <h1 id="percent-change-carbon"><i class="fa fa-caret-down" aria-hidden="true"></i>12.67%</h1> -->
+</div>
+
+</div>
+
+<div class="row twor">
+
+  <div class="col-md-6">
+  <div id="challenges-section-data-completed" class="left-dl left-nudge">
+    <h1 class="big-txt">Done Challenges</h1>
+    <h1 id="done-challenges-num" class="updatingTxt">--</h1>
+    <!-- <h1 id="percent-change-carbon"><i class="fa fa-caret-down" aria-hidden="true"></i>12.67%</h1> -->
+  </div>
+  </div>
+
+<div class="col-md-6">
+<div id="challenges-section-data" class="right-dl right-nudge">
+  <h1 class="big-txt">Users in Challenges</h1>
+  <h1 id="challenges-num" class="updatingTxt">--</h1>
+  <!-- <h1 id="percent-change-carbon"><i class="fa fa-caret-down" aria-hidden="true"></i>12.67%</h1> -->
+</div>
+</div>
+
+</div>
+
+<div class="row threer">
+
+<div class="col-md-6">
+<div id="goal-section-data" class="left-dl left-nudge bottom">
+  <h1 class="big-txt">Users Until Goal</h1>
+  <h4 class="subtitle-txt">September 30th Milestone</h4>
+  <h1 id="goal-num" class="updatingTxt">--</h1>
+  <!-- <h1 id="percent-change-carbon"><i class="fa fa-caret-down" aria-hidden="true"></i>12.67%</h1> -->
+</div>
+</div>
+
+<div class="col-md-6">
+  <div id="dl-co2-section" class="right-dl right-nudge bottom">
+    <h1 class="big-txt">Carbon Saved</h1>
+    <h4 class="subtitle-txt">In Pounds</h4>
+    <h1 id="carbon-num" class="updatingTxt">--</h1>
+    <!-- <h1 id="percent-change-carbon"><i class="fa fa-caret-down" aria-hidden="true"></i>12.67%</h1> -->
+  </div>
+</div>
+
+</div>
+
+
+</body>
+
+<!-- Google Firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBvvz_7-_F4X_5949OqbijpZDAfVqyhbmQ",
+    authDomain: "livegreen-3ebdc.firebaseapp.com",
+    databaseURL: "https://livegreen-3ebdc.firebaseio.com",
+    projectId: "livegreen-3ebdc",
+    storageBucket: "livegreen-3ebdc.appspot.com",
+    messagingSenderId: "491387418002"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.7.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.6/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.6/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.6/firebase.js"></script>
+<script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+
+<script>
+  var ref = new Firebase("https://livegreen-3ebdc.firebaseio.com");
+//var ref = firebase.databaseURL
+
+  var usersRef = ref.child("users");
+  usersRef.on('value', function(snapshot) {
+      //updateUserCount(snapshot.numChildren());
+      $('#users-num').text("" + snapshot.numChildren());
+      $('#goal-num').text(""+ (1000 - snapshot.numChildren()));
+      console.log("Here" + snapshot.numChildren());
+  });
+
+  var carbonRef = ref.child("trees/totalSavedCarbon");
+  carbonRef.on('value', function(snapshot) {
+
+      //updateUserCount(snapshot.numChildren());
+      $('#carbon-num').text("" + (snapshot.val() | 0));
+      console.log("Here" + snapshot.val());
+  });
+
+  var treesRef = ref.child("trees/total");
+  treesRef.on('value', function(snapshot) {
+
+      //updateUserCount(snapshot.numChildren());
+      $('#trees-num').text("" + snapshot.val());
+      console.log("Here" + snapshot.val());
+  });
+
+  var challengesRef = ref.child("challenges");
+  challengesRef.on('value', function(snapshot) {
+
+      //updateUserCount(snapshot.numChildren());
+      console.log("Chals: " + snapshot.val())
+
+      var sum = 0;
+      var obj = snapshot.val();
+
+//       for (let [key, value] of Object.entries(obj)) {
+//         console.log(key, value);
+//         var child = challengesRef.child(key);
+//         console.log(child);
+//         //console.log(sum);
+//       }
+
+      for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          if (key !== "totalCompleted" ) {
+            var val = obj[key];
+            sum = sum + val["current"];
+          } else if (key === "totalCompleted" ) {
+            var val2 = obj[key];
+          }
+        }
+      }
+
+      $('#done-challenges-num').text("" + val2);
+      $('#challenges-num').text("" + sum);
+      console.log("Here" + snapshot.val());
+  });
+
+</script>
+
+</html>
