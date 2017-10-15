@@ -1621,7 +1621,7 @@ justify-content: center;
 #app-links-body {
   height: 100%;
   width: 100%;
-  background: grey;
+  background: green;
 }
 
 @media screen and (min-width: 1000px) {
